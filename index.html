@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Sriracha&display=swap" rel="stylesheet">
+    <script src="assets/js/script.js" type="module"></script>
+
+</head>
+
+<body>
+    <section class="banner">
+        <div class="container">
+            <h1 class="heading">Welcome to your Dashboard!</h1>
+            <form id="inputForm">
+                <input type="text" placeholder="enter a zip code" id="zipcode" autofocus>
+                <button type="submit">SUBMIT</button>
+                <span class="msg"></span>
+            </form>
+        </div>
+    </section>
+    <section class="main">
+        <div class="cards">
+            <div class="item">
+                <div class="front flip" id="weather-front">
+                    <img src="./assets/images/weather.jpg" class="image" id="weatherImage">
+                    <div id="weather-replace" class="replace"></div>
+                </div>
+                <!-- <div class="back flip" id="weather-back">
+
+                </div> -->
+            </div>
+
+            <div class="item">
+                <div class="front flip" id="corona-front">
+                    <img src="./assets/images/corona.jpg" class="image" id="coronaImage">
+                    <div id="corona-replace" class="replace"></div>
+                </div>
+                <!-- <div class="back flip" id="corona-back">
+
+                </div> -->
+            </div>
+
+            <div class="item">
+                <div class="front flip" id="currency-front">
+                    <img src="./assets/images/currency.jpg" class="image" id="currencyImage">
+                    <div id="" class="replace">
+                        <h2 style="display: none;" id="currency-h2"> Currency</h2>
+                        <div class="us" id="curr-us" style="display: none;"></div>
+                        <br>
+                        <div id="currency-convert" style="display: none;">Convert currencies: <br>
+                            <select id="from"></select>
+                            <select id="to"></select>
+                            <button id="convertBtn">Convert</button>
+                            <div id="converted-val"></div>
+                        </div>
+                        <div id="currency-replace"></div>
+                    </div>
+                </div>
+                <!-- <div class=" back flip " id="currency-back ">
+
+                </div> -->
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
