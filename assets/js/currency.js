@@ -25,7 +25,6 @@ export function currencyconverter(from, to, date) {
                 console.log("conversion", request.responseText);
 
                 const parsedXML = parseXML(request.responseText).getElementsByTagName('GetConversionRateResult');
-                // const parsedXML = parseXML(request.responseText);
                 console.log(parsedXML);
 
                 const htmlReplace = `<p> 1 ${from} = ${parsedXML[0].innerHTML} ${to}</p>`;
@@ -110,14 +109,12 @@ export function getAllCurrencies() {
                     optionTag.value = element.innerHTML;
                     optionTag.textContent = element.innerHTML;
                     selectFrom.appendChild(optionTag);
-                    // selectTo.appendChild(optionTag);
                 });
 
                 parsedXML.forEach((element, index) => {
                     let optionTag = document.createElement('option');
                     optionTag.value = element.innerHTML;
                     optionTag.textContent = element.innerHTML;
-                    // selectFrom.appendChild(optionTag);
                     selectTo.appendChild(optionTag);
                 });
 
