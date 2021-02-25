@@ -33,8 +33,6 @@ export default function getWeather(zipCode) {
                 </div></div>`;
 
             document.getElementById('weather-replace').innerHTML = htmlReplace;
-            // document.getElementById('weather-front').style.zIndex = -1;
-            // document.getElementById('weather-front').style.position = relative;
         } else {
             msg.innerHTML = "<p>There is some issue with the request. Please check your request again.</p>"
         }

@@ -31,7 +31,7 @@ export default function getCoronaCases(zipCode) {
                 details = details + row;
             });
 
-            const htmlReplace = `<div><h2>Corona virus status in the last 6 days:</h2>
+            const htmlReplace = `<div><h2>Coronavirus status in the last 6 days:</h2>
                 <table style = "margin: 60px;margin-top:30px">
                     <thead>
                         <tr>
