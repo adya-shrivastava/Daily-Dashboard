@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         event.preventDefault();
         const zipcode = input.value;
 
-        console.log(zipcode);
-
         const url = `https://www.zipcodeapi.com/rest/${apiKey}/info.json/${zipcode}/degrees`;
         console.log(url);
 
@@ -31,14 +29,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         request.onload = () => {
             if (request.status === 200) {
                 const response = JSON.parse(request.response);
-                console.log(response);
-                console.log(response["city"], response["state"]);
                 const city = response["city"];
                 const state = response["state"];
                 const timezone = response["timezone"]["timezone_abbr"];
                 msg.innerHTML = `<p>You are currently in ${city}, ${state}. Timezone: ${timezone}</p>`;
 
-                // document.getElementById('weather-front').style.display = 'none';
                 if (document.getElementById("weatherImage")) {
                     document.getElementById('weatherImage').remove();
                 }
@@ -53,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 getCoronaCases(zipcode);
                 getCurrency("USD", formatDate);
                 getAllCurrencies();
-                // manageCurrencies(formatDate);
 
             } else {
                 msg.innerHTML = "<p>Please enter a valid zip code</p>";
@@ -73,8 +67,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('convertBtn').addEventListener("click", () => {
         const from = document.getElementById('from').value;
         const to = document.getElementById('to').value;
-
-        console.log(from, to, '~~~~~~~~~~+++');
 
         currencyconverter(from, to, formatDate);
     })

@@ -4,7 +4,6 @@ import { cors_api_url, weatherApi } from './constant.js';
 export default function getWeather(zipCode) {
     const url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${weatherApi}&units=metric`;
 
-    console.log("Weather URL", url);
     var request = new XMLHttpRequest();
     request.open('GET', cors_api_url + url, true);
     const msg = document.getElementById('weather-replace');
@@ -12,7 +11,6 @@ export default function getWeather(zipCode) {
     request.onload = () => {
         if (request.status === 200) {
             const response = JSON.parse(request.response);
-            console.log(response);
 
             const main = response["weather"]["main"];
             const description = response["weather"][0]["description"];

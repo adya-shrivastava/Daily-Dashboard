@@ -22,11 +22,7 @@ export function currencyconverter(from, to, date) {
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
             if (request.status == 200) {
-                console.log("conversion", request.responseText);
-
                 const parsedXML = parseXML(request.responseText).getElementsByTagName('GetConversionRateResult');
-                console.log(parsedXML);
-
                 const htmlReplace = `<p> 1 ${from} = ${parsedXML[0].innerHTML} ${to}</p>`;
 
                 document.getElementById('converted-val').innerHTML = htmlReplace;
@@ -61,11 +57,7 @@ export function getCurrency(currency, date) {
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
             if (request.status == 200) {
-                console.log("current currency", request.responseText);
-
                 const parsedXML = parseXML(request.responseText).getElementsByTagName('GetCurrencyRateResponse')[0].childNodes;
-                console.log(parsedXML);
-
                 const htmlReplace = `Today's USD value: ${parsedXML[0].innerHTML}`;
                 document.getElementById('currency-h2').style.display = 'block';
                 document.getElementById('curr-us').innerHTML = htmlReplace;
@@ -99,7 +91,6 @@ export function getAllCurrencies() {
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
             if (request.status == 200) {
-                console.log("all currencies", request.responseText);
                 const parsedXML = parseXML(request.responseText).getElementsByTagName('GetCurrenciesResult')[0].childNodes;
                 const selectFrom = document.getElementById('from');
                 const selectTo = document.getElementById('to');
@@ -130,10 +121,6 @@ export function getAllCurrencies() {
 function parseXML(xmlDoc) {
     const parser = new DOMParser();
     const dom = parser.parseFromString(xmlDoc, "application/xml");
-
-    console.log("Parsed string", dom.documentElement.nodeName);
-    console.log("Parsed string-----------", dom.documentElement);
-    // console.log("data~~~~~~~~", dom.getElementsByTagName('GetCurrenciesResult')[0].childNodes);
 
     return dom;
 }

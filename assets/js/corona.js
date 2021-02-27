@@ -4,7 +4,6 @@ import { cors_api_url } from './constant.js';
 export default function getCoronaCases(zipCode) {
     const url = `https://localcoviddata.com/covid19/v1/cases/newYorkTimes?zipCode=${zipCode}&daysInPast=7`;
 
-    console.log("Corona URL", url);
     var request = new XMLHttpRequest();
     request.open('GET', cors_api_url + url, true);
 
@@ -12,7 +11,6 @@ export default function getCoronaCases(zipCode) {
     request.onload = () => {
         if (request.status === 200) {
             const response = JSON.parse(request.response);
-            console.log(response);
 
             const counties = response["counties"][0];
             const countyName = counties["countyName"];
