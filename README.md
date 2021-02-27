@@ -46,3 +46,9 @@ This is a SOAP API that I used for displaying currency-related information on th
 - Install [http-server](https://www.npmjs.com/package/http-server) by running: `npm install http-server -g`
 - cd into the directory where the project is saved.
 - Start the http-server by running `http-server -o`. This will open a browser window at: `http://127.0.0.1:8080/`
+
+
+### References:
+1.	OpenWeather Map API -  https://openweathermap.org/api
+2.	CurrencyConverter API -  http://currencyconverter.kowabunga.net/converter.asmx
+3.	MuleSoft Anypoint public Covid API -  https://anypoint.mulesoft.com/exchange/68ef9520-24e9-4cf2-b2f5-620025690913/covid19-data-tracking-api/
