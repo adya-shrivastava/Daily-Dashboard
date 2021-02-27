@@ -19,6 +19,9 @@ export function currencyconverter(from, to, date) {
     request.open('POST', cors_api_url + url, true);
 
     const msg = document.getElementById('currency-replace');
+    if (msg) {
+        document.getElementById('currency-replace').remove();
+    }
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
             if (request.status == 200) {
@@ -27,9 +30,11 @@ export function currencyconverter(from, to, date) {
 
                 document.getElementById('converted-val').innerHTML = htmlReplace;
             } else {
-                msg.innerHTML = "<p>aaaThere is some issue with the request. Please check your request again.</p>"
+                msg.innerHTML = "<p>There is some issue with the request. Please check your request again.</p>"
             }
-        } else {}
+        } else {
+            msg.innerHTML = "<p>There is some issue with the request. Please check your request again.</p>"
+        }
     }
     request.onerror = () => { msg.innerHTML = "<p>Server Error. Please try again later</p>" }
     request.setRequestHeader('Content-Type', 'text/xml');
@@ -54,6 +59,9 @@ export function getCurrency(currency, date) {
     request.open('POST', cors_api_url + url, true);
 
     const msg = document.getElementById('currency-replace');
+    if (msg) {
+        document.getElementById('currency-replace').remove();
+    }
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
             if (request.status == 200) {
@@ -65,7 +73,9 @@ export function getCurrency(currency, date) {
             } else {
                 msg.innerHTML = "<p>There is some issue with the request. Please check your request again.</p>"
             }
-        } else {}
+        } else {
+            msg.innerHTML = "<p>There is some issue with the request. Please check your request again.</p>"
+        }
     }
 
 

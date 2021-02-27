@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         };
 
-        request.onerror = () => { msg.innerHTML = "<p>Please try again later" }
+        request.onerror = () => { msg.innerHTML = "<p>Please try again later</p>" }
         request.addEventListener('progress', () => {
             msg.innerHTML = "<p>Loading... Please wait</p>"
         });
